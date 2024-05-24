@@ -43,7 +43,7 @@ class CubicSolverApp(QtWidgets.QDialog, Ui_Dialog):
     def __init__(self):  
         super().__init__()
         self.setupUi(self)
-        self.calculateButton.clicked.connect(self.calculate_roots)
+        self.calculateButton.clicked.connect(self.calculeaza_radacini)
         self.plotButton.clicked.connect(self.plot_function)
 
     def plot_function(self):
@@ -65,7 +65,7 @@ class CubicSolverApp(QtWidgets.QDialog, Ui_Dialog):
             self.resultLabel.setText(f"Eroare: {e}")
         except Exception as e:
             self.resultLabel.setText(f"A apărut o eroare în calcularea rădăcinilor: {e}")
-    def calculate_roots(self):
+    def calculeaza_radacini(self):
         try:
             a = complex(self.aInput.text())
             b = complex(self.bInput.text())
